@@ -18,8 +18,6 @@ class Batch_Dataset:
     def preprocess(self):
         self.x_train = self.x_train.reshape(-1,self.x_train.shape[1]*self.x_train.shape[2])
         self.x_test  = self.x_test.reshape(-1,self.x_test.shape[1]*self.x_test.shape[2])
-        self.x_train = np.expand_dims(self.x_train, axis=-1)
-        self.x_test  = np.expand_dims(self.x_test, axis=-1)
         self.x_train = self.x_train.astype('float32') / 255.
         self.x_test  = self.x_test.astype('float32')  / 255.
         self.num_classes = len(np.unique(self.y_train))
