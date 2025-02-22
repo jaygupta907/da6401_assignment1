@@ -33,3 +33,13 @@ class Batch_Dataset:
             end_idx = start_idx + batch_size
             batch_indices = indices[start_idx:end_idx]
             yield self.x_train[batch_indices], self.y_train[batch_indices] 
+
+    def create_test_batches(self,batch_size=32, shuffle=True):
+        num_datapoints = len(self.x_test)
+        indices = np.arange(num_datapoints)
+        if shuffle:
+            np.random.shuffle(indices) 
+        for start_idx in range(0,num_datapoints, batch_size):
+            end_idx = start_idx + batch_size
+            batch_indices = indices[start_idx:end_idx]
+            yield self.x_test[batch_indices], self.y_test[batch_indices] 

@@ -53,7 +53,7 @@ class Perceptron_Layer:
         self.input = x  #shape : (input_dim,batch_size)
         return np.dot(self.weights, x) + self.biases
     
-    def backward(self, grad_output,optimizer='sgd',lr=0.01,beta1=0.9,beta2=0.999,epsilon=1e-8):
+    def backward(self, grad_output,args):
         """
         Computes and updates weights using the selected optimizer.
 
@@ -64,15 +64,15 @@ class Perceptron_Layer:
             numpy.ndarray: Gradient of loss w.r.t input, shape (in_dim, batch_size).
         """
         self.timestep += 1
-        batch_size = self.input.shape[-1]
+        batch_size = args.batch_size
         grad_input = np.dot(self.weights.T, grad_output)  #shape : (input_dim,batch_size)
         grad_weights = np.dot(grad_output, self.input.T) / batch_size  #shape : (output_dim,input_dim)
         grad_biases = np.sum(grad_output, axis=1, keepdims=True) / batch_size  #shape : (output_dim,1)
 
 
-        if optimizer == 'sgd':
-            self.weights -= lr * grad_weights
-            self.biases -= lr * grad_biases
+        if args.optimizer == 'sgd':
+            self.weights -= args.learning_rate * grad_weights
+            self.biases -= args.learning_rate * grad_biases
 
         return grad_input
 
