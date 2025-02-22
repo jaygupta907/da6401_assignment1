@@ -7,7 +7,7 @@ import wandb
 
 args = get_args()
 
-wandb.init(project=args.wandb_project, entity=args.wandb_entity,name="run_1")
+wandb.init(project=args.wandb_project, entity=args.wandb_entity,config=args,name=f"{args.optimizer}_lr_{args.learning_rate}")
 
 data = Batch_Dataset(args.dataset)
 data.preprocess()

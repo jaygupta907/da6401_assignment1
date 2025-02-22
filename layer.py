@@ -80,9 +80,9 @@ class Perceptron_Layer:
         grad_input = np.dot(self.weights.T, grad_output)  #shape : (input_dim,batch_size)
         grad_weights = np.dot(grad_output, self.input.T) / batch_size  #shape : (output_dim,input_dim)
         grad_biases = np.sum(grad_output, axis=1, keepdims=True) / batch_size  #shape : (output_dim,1)
-
         grad_weights += args.weight_decay * self.weights
         grad_biases  += args.weight_decay * self.biases 
+
         if args.optimizer == 'sgd':
             self.weights -= args.learning_rate * grad_weights
             self.biases  -= args.learning_rate * grad_biases
@@ -103,5 +103,8 @@ class Perceptron_Layer:
             pass
 
         return grad_input
+
+
+        
 
 

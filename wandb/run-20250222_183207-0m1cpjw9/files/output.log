@@ -1,0 +1,7 @@
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 0 is 0.098
+The cross entropy loss at epoch 0 is 649.8353932059113
+The cross entropy loss at epoch 1 is 649.8254780249828
+The cross entropy loss at epoch 2 is 649.8254780249828
+The cross entropy loss at epoch 3 is 649.8254780249828
+The cross entropy loss at epoch 4 is 649.8254780249828

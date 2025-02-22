@@ -88,6 +88,7 @@ class Sequential:
             if epoch % args.eval_freq == 0:
                 print("\n <=======================Evaulating=======================>")
                 evaluation_accuracy = self.evaluate(test_batches)
+                wandb.log({"epoch": epoch,"evaluation_accuracy": evaluation_accuracy})
                 print("The evaluation accuracy at epoch {} is {} \n".format(epoch,evaluation_accuracy))
             print('The cross entropy loss at epoch {} is {}'.format(epoch,loss/args.batch_size))
 

@@ -1,0 +1,61 @@
+_wandb:
+    value:
+        cli_version: 0.19.7
+        m: []
+        python_version: 3.10.16
+        t:
+            "1":
+                - 2
+                - 3
+                - 55
+            "2":
+                - 2
+                - 3
+                - 55
+            "3":
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.10.16
+            "5": 0.19.7
+            "8":
+                - 2
+                - 3
+                - 5
+            "12": 0.19.7
+            "13": windows-amd64
+activation:
+    value: relu
+batch_size:
+    value: 64
+beta1:
+    value: 0.9
+beta2:
+    value: 0.999
+dataset:
+    value: mnist
+epochs:
+    value: 100
+epsilon:
+    value: 1e-08
+eval_freq:
+    value: 10
+hidden_size:
+    value: 64
+learning_rate:
+    value: 0.0005
+momentum:
+    value: 0.9
+num_layers:
+    value: 4
+optimizer:
+    value: momentum
+wandb_entity:
+    value: jay_gupta-indian-institute-of-technology-madras
+wandb_project:
+    value: Multilayer_FeedForward_Network
+weight_decay:
+    value: 0
+weight_init:
+    value: xavier_normal

@@ -7,7 +7,7 @@ def get_args():
     parser.add_argument('--eval_freq', type=int, default=10, help='Evaluation frequency')
     parser.add_argument('--learning_rate', type=float, default=5e-4, help='Learning rate') 
     parser.add_argument('--dataset', type=str, default='mnist', help='Dataset to use')
-    parser.add_argument('--hidden_size', type=int, default=256, help='Number of neurons in hidden layer')
+    parser.add_argument('--hidden_size', type=int, default=64, help='Number of neurons in hidden layer')
     parser.add_argument('--num_layers', type=int, default=4, help='Number of hidden layers')
     parser.add_argument('--optimizer', type=str, default='momentum', help='Optimizer to use')
     parser.add_argument('--weight_init', type=str, default='xavier_normal', help='Weight initialization')

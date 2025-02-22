@@ -1,0 +1,112 @@
+2025-02-22 18:20:51,330 INFO    MainThread:29028 [wandb_setup.py:_flush():67] Current SDK version is 0.19.7
+2025-02-22 18:20:51,330 INFO    MainThread:29028 [wandb_setup.py:_flush():67] Configure stats pid to 29028
+2025-02-22 18:20:51,331 INFO    MainThread:29028 [wandb_setup.py:_flush():67] Loading settings from C:\Users\jaygu\.config\wandb\settings
+2025-02-22 18:20:51,331 INFO    MainThread:29028 [wandb_setup.py:_flush():67] Loading settings from F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\settings
+2025-02-22 18:20:51,331 INFO    MainThread:29028 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-02-22 18:20:51,331 INFO    MainThread:29028 [wandb_init.py:setup_run_log_directory():647] Logging user logs to F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250222_182051-rmneozgq\logs\debug.log
+2025-02-22 18:20:51,331 INFO    MainThread:29028 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250222_182051-rmneozgq\logs\debug-internal.log
+2025-02-22 18:20:51,331 INFO    MainThread:29028 [wandb_init.py:init():761] calling init triggers
+2025-02-22 18:20:51,332 INFO    MainThread:29028 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'epochs': 100, 'batch_size': 64, 'eval_freq': 10, 'learning_rate': 0.0005, 'dataset': 'mnist', 'hidden_size': 64, 'num_layers': 4, 'optimizer': 'momentum', 'weight_init': 'xavier_normal', 'activation': 'relu', 'beta1': 0.9, 'beta2': 0.999, 'epsilon': 1e-08, 'momentum': 0.9, 'weight_decay': 0.0, 'wandb_project': 'Multilayer_FeedForward_Network', 'wandb_entity': 'jay_gupta-indian-institute-of-technology-madras', '_wandb': {}}
+2025-02-22 18:20:51,332 INFO    MainThread:29028 [wandb_init.py:init():784] starting backend
+2025-02-22 18:20:51,332 INFO    MainThread:29028 [wandb_init.py:init():788] sending inform_init request
+2025-02-22 18:20:51,364 INFO    MainThread:29028 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=spawn, using: spawn
+2025-02-22 18:20:51,364 INFO    MainThread:29028 [wandb_init.py:init():803] backend started and connected
+2025-02-22 18:20:51,365 INFO    MainThread:29028 [wandb_init.py:init():896] updated telemetry
+2025-02-22 18:20:51,414 INFO    MainThread:29028 [wandb_init.py:init():920] communicating run to backend with 90.0 second timeout
+2025-02-22 18:21:22,389 INFO    Thread-7 (wrapped_target):29028 [retry.py:__call__():175] Retry attempt failed:
+Traceback (most recent call last):
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x00000170B7A60E50>, 'Connection to api.wandb.ai timed out. (connect timeout=20)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000170B7A60E50>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\lib\retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\internal\internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\lib\gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\requests\adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000170B7A60E50>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+2025-02-22 18:21:41,739 WARNING MainThread:29028 [wandb_init.py:init():1475] interrupted
+Traceback (most recent call last):
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\wandb_init.py", line 1471, in init
+    return wi.init(run_settings, run_config)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\wandb_init.py", line 946, in init
+    result = wait_with_progress(
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\mailbox\wait_with_progress.py", line 23, in wait_with_progress
+    return wait_all_with_progress(
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\mailbox\wait_with_progress.py", line 86, in wait_all_with_progress
+    return asyncio_compat.run(progress_loop_with_timeout)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\lib\asyncio_compat.py", line 30, in run
+    return future.result()
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\concurrent\futures\_base.py", line 453, in result
+    self._condition.wait(timeout)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\threading.py", line 320, in wait
+    waiter.acquire()
+KeyboardInterrupt
+2025-02-22 18:21:41,758 WARNING MsgRouterThr:29028 [router.py:message_loop():77] message_loop has been closed
+Traceback (most recent call last):
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\interface\router_sock.py", line 28, in _read_message
+    resp = self._sock_client.read_server_response(timeout=1)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\lib\sock_client.py", line 285, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\lib\sock_client.py", line 270, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\interface\router.py", line 70, in message_loop
+    msg = self._read_message()
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\wandb\sdk\interface\router_sock.py", line 30, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-02-22 18:21:41,761 INFO    MsgRouterThr:29028 [mailbox.py:close():115] Closing mailbox, abandoning 0 handles.

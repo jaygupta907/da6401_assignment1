@@ -1,0 +1,46 @@
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 0 is 0.15047770700636942
+
+The cross entropy loss at epoch 0 is 60.78814228431522
+The cross entropy loss at epoch 1 is 60.614833062532945
+The cross entropy loss at epoch 2 is 60.56713806080416
+The cross entropy loss at epoch 3 is 60.570378456895476
+The cross entropy loss at epoch 4 is 63.881017681034116
+The cross entropy loss at epoch 5 is 74.4698818203205
+The cross entropy loss at epoch 6 is 76.67565578949491
+The cross entropy loss at epoch 7 is 80.40250917488684
+The cross entropy loss at epoch 8 is 85.01234962393225
+The cross entropy loss at epoch 9 is 87.27327044952068
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 10 is 0.24850716560509553
+
+The cross entropy loss at epoch 10 is 86.89165989631644
+The cross entropy loss at epoch 11 is 86.90997993206368
+The cross entropy loss at epoch 12 is 89.77959445988515
+The cross entropy loss at epoch 13 is 99.35743081464702
+The cross entropy loss at epoch 14 is 104.97867552727394
+The cross entropy loss at epoch 15 is 110.95766732280464
+The cross entropy loss at epoch 16 is 113.39042726752297
+The cross entropy loss at epoch 17 is 117.47194709367322
+The cross entropy loss at epoch 18 is 120.37241323140884
+The cross entropy loss at epoch 19 is 129.2967938323573
+F:\Semester 8\Introduction to Deep Learning\Assignment_1\layer.py:21: RuntimeWarning: invalid value encountered in subtract
+  lambda x: np.exp(x - np.max(x, axis=1, keepdims=True)) / np.sum(np.exp(x - np.max(x, axis=1, keepdims=True)), axis=1, keepdims=True),
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 20 is 0.09753184713375797
+
+The cross entropy loss at epoch 20 is nan
+The cross entropy loss at epoch 21 is nan
+Traceback (most recent call last):
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\train.py", line 23, in <module>
+    model.train(train_batches,test_batches,args)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 86, in train
+    self.backward(X_batch,Y_batch)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 70, in backward
+    grad_output = self.layers[i].backward(grad_output,self.args)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\layer.py", line 81, in backward
+    grad_weights = np.dot(grad_output, self.input.T) / batch_size  #shape : (output_dim,input_dim)
+KeyboardInterrupt
