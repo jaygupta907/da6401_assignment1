@@ -2,7 +2,7 @@ import numpy as np
 import os
 import sys
 import matplotlib.pyplot as plt
-
+import wandb
 
 ACTIVATIONS = {
     "relu": (
@@ -25,6 +25,9 @@ ACTIVATIONS = {
 
 
 class Perceptron_Layer:
+    '''
+    A class to represent a perceptron layer.
+    '''
     def __init__(self, input_dim,output_dim,weight_init='random'):
         self.input_dim = input_dim
         self.output_dim = output_dim
@@ -50,6 +53,15 @@ class Perceptron_Layer:
 
 
     def forward(self, x):
+        '''
+        Forward pass of the perceptron layer.
+
+        Args:
+            x (numpy.ndarray): Input, shape (input_dim, batch_size).
+
+        Returns:
+            numpy.ndarray: Output, shape (output_dim, batch_size).
+        '''
         self.input = x  #shape : (input_dim,batch_size)
         return np.dot(self.weights, x) + self.biases
     
@@ -69,10 +81,26 @@ class Perceptron_Layer:
         grad_weights = np.dot(grad_output, self.input.T) / batch_size  #shape : (output_dim,input_dim)
         grad_biases = np.sum(grad_output, axis=1, keepdims=True) / batch_size  #shape : (output_dim,1)
 
-
+        grad_weights += args.weight_decay * self.weights
+        grad_biases  += args.weight_decay * self.biases 
         if args.optimizer == 'sgd':
             self.weights -= args.learning_rate * grad_weights
-            self.biases -= args.learning_rate * grad_biases
+            self.biases  -= args.learning_rate * grad_biases
+            
+        if args.optimizer == 'momentum':
+            self.v_w = args.momentum * self.v_w +grad_weights
+            self.v_b = args.momentum * self.v_b +grad_biases
+            self.weights -= args.learning_rate*self.v_w
+            self.biases  -= args.learning_rate*self.v_b
+
+        if args.optimizer == 'nag':
+            pass
+        if args.optimizer == 'adam':
+            pass
+        if args.optimizer == 'rmsprop':
+            pass
+        if args.optimizer =='nadam':
+            pass
 
         return grad_input
 
