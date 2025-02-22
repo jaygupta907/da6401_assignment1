@@ -1,5 +1,0 @@
-numpy
-wandb
-keras
-tensorflow
-matplotlib
