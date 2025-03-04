@@ -1,8 +1,7 @@
-from layer import Perceptron_Layer,ACTIVATIONS
+from layer import ACTIVATIONS
 import numpy as np
 from loss import cross_entropy_derivative,cross_entropy_loss
 import wandb
-import os
 
 class Sequential:
     '''
@@ -67,7 +66,7 @@ class Sequential:
             if self.activation_functions[i]:
                 _,activation_grad = self.activation_functions[i]
                 grad_output = activation_grad(self.activations[i]) * grad_output
-            grad_output = self.layers[i].backward(grad_output,self.args)
+            grad_output = self.layers[i].backward(grad_output)
 
 
     def train(self,train_batches,test_batches,args):

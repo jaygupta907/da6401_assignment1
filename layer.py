@@ -3,6 +3,7 @@ import os
 import sys
 import matplotlib.pyplot as plt
 import wandb
+from optimizers import SGD,Momentum,Nesterov,Adagrad,RMSProp,Adam,Nadam
 
 ACTIVATIONS = {
     "relu": (
@@ -28,7 +29,7 @@ class Perceptron_Layer:
     '''
     A class to represent a perceptron layer.
     '''
-    def __init__(self, input_dim,output_dim,weight_init='random'):
+    def __init__(self, input_dim,output_dim,args,weight_init='random'):
         self.input_dim = input_dim
         self.output_dim = output_dim
         if weight_init == 'random':
@@ -44,12 +45,26 @@ class Perceptron_Layer:
         
         self.biases =  np.random.randn(output_dim,1)
         self.input = None
-        self.timestep =0
+        self.args = args
 
-        self.v_w =  np.zeros_like(self.weights)
-        self.v_b =  np.zeros_like(self.biases)
-        self.m_w =  np.zeros_like(self.weights)
-        self.m_b =  np.zeros_like(self.biases)
+        if args.optimizer == 'sgd':
+            self.optimizer = SGD(args)
+        elif args.optimizer == 'momentum':
+            self.optimizer = Momentum(args)
+        elif args.optimizer == 'nesterov':
+            self.optimizer = Nesterov(args)
+        elif args.optimizer == 'adagrad':
+            self.optimizer = Adagrad(args)
+        elif args.optimizer == 'rmsprop':
+            self.optimizer = RMSProp(args)
+        elif args.optimizer == 'adam':
+            self.optimizer = Adam(args)
+        elif args.optimizer == 'nadam':
+            self.optimizer = Nadam(args)
+        else:
+            raise ValueError('Optimizer not supported')
+        
+
 
 
     def forward(self, x):
@@ -62,10 +77,10 @@ class Perceptron_Layer:
         Returns:
             numpy.ndarray: Output, shape (output_dim, batch_size).
         '''
-        self.input = x  #shape : (input_dim,batch_size)
+        self.input = x  
         return np.dot(self.weights, x) + self.biases
     
-    def backward(self, grad_output,args):
+    def backward(self, grad_output):
         """
         Computes and updates weights using the selected optimizer.
 
@@ -75,62 +90,17 @@ class Perceptron_Layer:
         Returns:
             numpy.ndarray: Gradient of loss w.r.t input, shape (in_dim, batch_size).
         """
-        self.timestep += 1
-        batch_size = args.batch_size
-        grad_input = np.dot(self.weights.T, grad_output)  #shape : (input_dim,batch_size)
-        grad_weights = np.dot(grad_output, self.input.T) / batch_size  #shape : (output_dim,input_dim)
-        grad_biases = np.sum(grad_output, axis=1, keepdims=True) / batch_size  #shape : (output_dim,1)
-        grad_weights += args.weight_decay * self.weights
-        grad_biases  += args.weight_decay * self.biases 
+        batch_size = self.args.batch_size
+        grad_input = np.dot(self.weights.T, grad_output)
+        grad_weights = np.dot(grad_output, self.input.T) / batch_size  
+        grad_biases = np.sum(grad_output, axis=1, keepdims=True) / batch_size 
+        grad_weights += self.args.weight_decay * self.weights
+        grad_biases  += self.args.weight_decay * self.biases 
 
-        if args.optimizer == 'sgd':
-            self.weights -= args.learning_rate * grad_weights
-            self.biases  -= args.learning_rate * grad_biases
-            
-        if args.optimizer == 'momentum':
-            self.v_w = args.momentum * self.v_w +grad_weights
-            self.v_b = args.momentum * self.v_b +grad_biases
-            self.weights -= args.learning_rate*self.v_w
-            self.biases  -= args.learning_rate*self.v_b
-
-        if args.optimizer == 'nag':
-            pass
-        if args.optimizer == 'adagrad':
-            self.v_w += grad_weights**2
-            self.v_b += grad_biases**2
-            self.weights -= args.learning_rate * grad_weights / (np.sqrt(self.v_w) + args.epsilon)
-            self.biases  -= args.learning_rate * grad_biases / (np.sqrt(self.v_b) + args.epsilon)
-
-        if args.optimizer == 'rmsprop':
-            self.v_w = args.beta * self.v_w + (1 - args.beta) * grad_weights**2
-            self.v_b = args.beta * self.v_b + (1 - args.beta) * grad_biases**2
-            self.weights -= args.learning_rate * grad_weights / (np.sqrt(self.v_w) + args.epsilon)
-            self.biases  -= args.learning_rate * grad_biases / (np.sqrt(self.v_b) + args.epsilon)
-
-        if args.optimizer == 'adam':
-            self.m_w = args.beta1 * self.m_w + (1 - args.beta1) * grad_weights
-            self.m_b = args.beta1 * self.m_b + (1 - args.beta1) * grad_biases
-            self.v_w = args.beta2 * self.v_w + (1 - args.beta2) * grad_weights**2
-            self.v_b = args.beta2 * self.v_b + (1 - args.beta2) * grad_biases**2
-            m_w_hat = self.m_w / (1 - args.beta1**self.timestep)
-            m_b_hat = self.m_b / (1 - args.beta1**self.timestep)
-            v_w_hat = self.v_w / (1 - args.beta2**self.timestep)
-            v_b_hat = self.v_b / (1 - args.beta2**self.timestep)
-            self.weights -= args.learning_rate * m_w_hat / (np.sqrt(v_w_hat) + args.epsilon)
-            self.biases  -= args.learning_rate * m_b_hat / (np.sqrt(v_b_hat) + args.epsilon)
-
-        if args.optimizer =='nadam':
-            self.m_w = args.beta1 * self.m_w + (1 - args.beta1) * grad_weights
-            self.m_b = args.beta1 * self.m_b + (1 - args.beta1) * grad_biases
-            self.v_w = args.beta2 * self.v_w + (1 - args.beta2) * grad_weights**2
-            self.v_b = args.beta2 * self.v_b + (1 - args.beta2) * grad_biases**2
-            m_w_hat = self.m_w / (1 - args.beta1**self.timestep)
-            m_b_hat = self.m_b / (1 - args.beta1**self.timestep)
-            v_w_hat = self.v_w / (1 - args.beta2**self.timestep)
-            v_b_hat = self.v_b / (1 - args.beta2**self.timestep)
-            self.weights -= args.learning_rate * (args.beta1 * m_w_hat + (1 - args.beta1) * grad_weights/(1-args.beta1**self.timestep)) / (np.sqrt(v_w_hat) + args.epsilon)
-            self.biases  -= args.learning_rate * (args.beta1 * m_b_hat + (1 - args.beta1) * grad_biases/(1-args.beta1**self.timestep)) / (np.sqrt(v_b_hat) + args.epsilon)
-
+        self.weights,self.biases = self.optimizer.update(self.weights,
+                                                    self.biases,
+                                                    grad_weights,
+                                                    grad_biases)
         return grad_input
 
 
