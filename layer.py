@@ -18,8 +18,8 @@ ACTIVATIONS = {
         lambda x: lambda y: 1 - y**2  
     ),
     "softmax": (
-        lambda x: np.exp(x - np.max(x, axis=1, keepdims=True)) / np.sum(np.exp(x - np.max(x, axis=1, keepdims=True)), axis=1, keepdims=True),
-        lambda x: x  # Softmax derivative handled separately in loss
+        lambda x: np.exp(x - np.max(x, axis=0, keepdims=True)) / np.sum(np.exp(x - np.max(x, axis=0, keepdims=True)), axis=0, keepdims=True),
+        lambda x: np.ones_like(x)  
     )
 }
 
@@ -95,12 +95,41 @@ class Perceptron_Layer:
 
         if args.optimizer == 'nag':
             pass
-        if args.optimizer == 'adam':
-            pass
+        if args.optimizer == 'adagrad':
+            self.v_w += grad_weights**2
+            self.v_b += grad_biases**2
+            self.weights -= args.learning_rate * grad_weights / (np.sqrt(self.v_w) + args.epsilon)
+            self.biases  -= args.learning_rate * grad_biases / (np.sqrt(self.v_b) + args.epsilon)
+
         if args.optimizer == 'rmsprop':
-            pass
+            self.v_w = args.beta * self.v_w + (1 - args.beta) * grad_weights**2
+            self.v_b = args.beta * self.v_b + (1 - args.beta) * grad_biases**2
+            self.weights -= args.learning_rate * grad_weights / (np.sqrt(self.v_w) + args.epsilon)
+            self.biases  -= args.learning_rate * grad_biases / (np.sqrt(self.v_b) + args.epsilon)
+
+        if args.optimizer == 'adam':
+            self.m_w = args.beta1 * self.m_w + (1 - args.beta1) * grad_weights
+            self.m_b = args.beta1 * self.m_b + (1 - args.beta1) * grad_biases
+            self.v_w = args.beta2 * self.v_w + (1 - args.beta2) * grad_weights**2
+            self.v_b = args.beta2 * self.v_b + (1 - args.beta2) * grad_biases**2
+            m_w_hat = self.m_w / (1 - args.beta1**self.timestep)
+            m_b_hat = self.m_b / (1 - args.beta1**self.timestep)
+            v_w_hat = self.v_w / (1 - args.beta2**self.timestep)
+            v_b_hat = self.v_b / (1 - args.beta2**self.timestep)
+            self.weights -= args.learning_rate * m_w_hat / (np.sqrt(v_w_hat) + args.epsilon)
+            self.biases  -= args.learning_rate * m_b_hat / (np.sqrt(v_b_hat) + args.epsilon)
+
         if args.optimizer =='nadam':
-            pass
+            self.m_w = args.beta1 * self.m_w + (1 - args.beta1) * grad_weights
+            self.m_b = args.beta1 * self.m_b + (1 - args.beta1) * grad_biases
+            self.v_w = args.beta2 * self.v_w + (1 - args.beta2) * grad_weights**2
+            self.v_b = args.beta2 * self.v_b + (1 - args.beta2) * grad_biases**2
+            m_w_hat = self.m_w / (1 - args.beta1**self.timestep)
+            m_b_hat = self.m_b / (1 - args.beta1**self.timestep)
+            v_w_hat = self.v_w / (1 - args.beta2**self.timestep)
+            v_b_hat = self.v_b / (1 - args.beta2**self.timestep)
+            self.weights -= args.learning_rate * (args.beta1 * m_w_hat + (1 - args.beta1) * grad_weights/(1-args.beta1**self.timestep)) / (np.sqrt(v_w_hat) + args.epsilon)
+            self.biases  -= args.learning_rate * (args.beta1 * m_b_hat + (1 - args.beta1) * grad_biases/(1-args.beta1**self.timestep)) / (np.sqrt(v_b_hat) + args.epsilon)
 
         return grad_input
 

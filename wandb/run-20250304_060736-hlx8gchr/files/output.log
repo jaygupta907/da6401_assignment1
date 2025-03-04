@@ -1,0 +1,24 @@
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 0 is 0.912718949044586
+
+The cross entropy loss at epoch 0 is 517.1236712664738
+The cross entropy loss at epoch 1 is 12544.190371552291
+The cross entropy loss at epoch 2 is 17473.598712795483
+The cross entropy loss at epoch 3 is 17481.69373851343
+The cross entropy loss at epoch 4 is 17498.855193035473
+The cross entropy loss at epoch 5 is 17479.4271313124
+The cross entropy loss at epoch 6 is 17528.644887677525
+The cross entropy loss at epoch 7 is 17481.36993748472
+The cross entropy loss at epoch 8 is 17444.45662021086
+The cross entropy loss at epoch 9 is 17489.14116217394
+Traceback (most recent call last):
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\train.py", line 23, in <module>
+    model.train(train_batches,test_batches,args)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 85, in train
+    Y_pred = self.forward(X_batch)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 50, in forward
+    A = activation_func(Z)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\layer.py", line 21, in <lambda>
+    lambda x: np.exp(x - np.max(x, axis=0, keepdims=True)) / np.sum(np.exp(x - np.max(x, axis=0, keepdims=True)), axis=0, keepdims=True),
+KeyboardInterrupt

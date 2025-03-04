@@ -39,7 +39,7 @@ class Sequential:
             X (numpy.ndarray): Input, shape (batch_size, input_dim).
         
         Returns:
-            numpy.ndarray: Output, shape (batch_size, num_clsses).
+            numpy.ndarray: Output, shape (batch_size, num_classes).
         '''
         self.activations =[]
         A = X.T

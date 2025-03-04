@@ -1,0 +1,105 @@
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 0 is 0.9450636942675159
+
+The cross entropy loss at epoch 0 is 328.27053235828544
+The cross entropy loss at epoch 1 is 135.51471149374117
+The cross entropy loss at epoch 2 is 103.47516195419952
+The cross entropy loss at epoch 3 is 84.46800255490649
+The cross entropy loss at epoch 4 is 70.39636715528557
+The cross entropy loss at epoch 5 is 59.68629923508655
+The cross entropy loss at epoch 6 is 51.071876942465316
+The cross entropy loss at epoch 7 is 45.81713232772235
+The cross entropy loss at epoch 8 is 40.76940341936206
+The cross entropy loss at epoch 9 is 37.5860261434383
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 10 is 0.9653662420382165
+
+The cross entropy loss at epoch 10 is 33.61089656281466
+The cross entropy loss at epoch 11 is 30.917893074569015
+The cross entropy loss at epoch 12 is 29.1729493279346
+The cross entropy loss at epoch 13 is 25.348726992225682
+The cross entropy loss at epoch 14 is 25.08203674631939
+The cross entropy loss at epoch 15 is 25.196889268948713
+The cross entropy loss at epoch 16 is 21.60272150736041
+The cross entropy loss at epoch 17 is 22.091367589745936
+The cross entropy loss at epoch 18 is 19.472022442573557
+The cross entropy loss at epoch 19 is 19.18145051682479
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 20 is 0.9677547770700637
+
+The cross entropy loss at epoch 20 is 17.74133907346566
+The cross entropy loss at epoch 21 is 17.747881792133118
+The cross entropy loss at epoch 22 is 16.872072255842472
+The cross entropy loss at epoch 23 is 18.000353156025227
+The cross entropy loss at epoch 24 is 15.370553854880654
+The cross entropy loss at epoch 25 is 15.23146788857096
+The cross entropy loss at epoch 26 is 15.679141512665865
+The cross entropy loss at epoch 27 is 13.095151155065322
+The cross entropy loss at epoch 28 is 14.141700666028099
+The cross entropy loss at epoch 29 is 13.17994664878235
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 30 is 0.9681528662420382
+
+The cross entropy loss at epoch 30 is 15.684706361761762
+The cross entropy loss at epoch 31 is 13.711178206658712
+The cross entropy loss at epoch 32 is 9.620182699945476
+The cross entropy loss at epoch 33 is 14.967902932603154
+The cross entropy loss at epoch 34 is 9.364688740977947
+The cross entropy loss at epoch 35 is 13.695413252690704
+The cross entropy loss at epoch 36 is 11.17836923369886
+The cross entropy loss at epoch 37 is 8.454360362160303
+The cross entropy loss at epoch 38 is 10.986776881161976
+The cross entropy loss at epoch 39 is 12.561268253181028
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 40 is 0.96875
+
+The cross entropy loss at epoch 40 is 11.553789731273374
+The cross entropy loss at epoch 41 is 10.713751130195902
+The cross entropy loss at epoch 42 is 9.609360619582022
+The cross entropy loss at epoch 43 is 9.200465201004913
+The cross entropy loss at epoch 44 is 9.430740716242308
+The cross entropy loss at epoch 45 is 8.920050465616916
+The cross entropy loss at epoch 46 is 10.044569474307954
+The cross entropy loss at epoch 47 is 8.849360950059754
+The cross entropy loss at epoch 48 is 8.427123411511714
+The cross entropy loss at epoch 49 is 11.10523166361174
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 50 is 0.9717356687898089
+
+The cross entropy loss at epoch 50 is 6.743840740353434
+The cross entropy loss at epoch 51 is 11.115280310154764
+The cross entropy loss at epoch 52 is 8.007017887136115
+The cross entropy loss at epoch 53 is 9.047493296314371
+The cross entropy loss at epoch 54 is 8.987386822838893
+The cross entropy loss at epoch 55 is 7.347905350406452
+The cross entropy loss at epoch 56 is 8.567865862809873
+The cross entropy loss at epoch 57 is 8.509057762580602
+The cross entropy loss at epoch 58 is 7.487563240748331
+The cross entropy loss at epoch 59 is 7.493954672660105
+
+ <=======================Evaulating=======================>
+The evaluation accuracy at epoch 60 is 0.9717356687898089
+
+The cross entropy loss at epoch 60 is 5.654324130959533
+The cross entropy loss at epoch 61 is 9.502579449432176
+The cross entropy loss at epoch 62 is 6.907107724001972
+The cross entropy loss at epoch 63 is 8.537658090841502
+The cross entropy loss at epoch 64 is 6.925005645614571
+The cross entropy loss at epoch 65 is 7.084356960126898
+The cross entropy loss at epoch 66 is 7.251914828446539
+Traceback (most recent call last):
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\train.py", line 23, in <module>
+    model.train(train_batches,test_batches,args)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 85, in train
+    Y_pred = self.forward(X_batch)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 47, in forward
+    Z = layer.forward(A)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\layer.py", line 66, in forward
+    return np.dot(self.weights, x) + self.biases
+KeyboardInterrupt
