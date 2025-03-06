@@ -1,0 +1,59 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "CPython 3.10.16",
+    "heartbeatAt": "2025-03-04T13:31:22.947354",
+    "startedAt": "2025-03-04T13:31:20.678928",
+    "docker": null,
+    "args": [
+        "service",
+        "--debug",
+        "--port-filename",
+        "C:\\Users\\jaygu\\AppData\\Local\\Temp\\tmp6680ge7s\\port-19292.txt",
+        "--pid",
+        "19292"
+    ],
+    "state": "running",
+    "program": "F:\\Semester 8\\Introduction to Deep Learning\\Assignment_1\\train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/jaygupta907/da6401_assignment1.git",
+        "commit": "8b70f316f17e6ea2e06f706a309e1ac3f62e11fd"
+    },
+    "email": "ae21b026@smail.iitm.ac.in",
+    "root": "F:/Semester 8/Introduction to Deep Learning/Assignment_1",
+    "host": "LAPTOP-SDMPAGSO",
+    "username": null,
+    "executable": "C:\\Users\\jaygu\\anaconda3\\envs\\Multilayer_FFNN\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3201.0,
+        "min": 0.0,
+        "max": 3201.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3201.0,
+            "min": 0.0,
+            "max": 3201.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 524287995904,
+            "used": 36913836032
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 16474042368
+    }
+}

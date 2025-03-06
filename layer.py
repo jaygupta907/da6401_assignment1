@@ -1,8 +1,4 @@
 import numpy as np
-import os
-import sys
-import matplotlib.pyplot as plt
-import wandb
 from optimizers import SGD,Momentum,Nesterov,Adagrad,RMSProp,Adam,Nadam
 
 ACTIVATIONS = {
@@ -90,10 +86,9 @@ class Perceptron_Layer:
         Returns:
             numpy.ndarray: Gradient of loss w.r.t input, shape (in_dim, batch_size).
         """
-        batch_size = self.args.batch_size
         grad_input = np.dot(self.weights.T, grad_output)
-        grad_weights = np.dot(grad_output, self.input.T) / batch_size  
-        grad_biases = np.sum(grad_output, axis=1, keepdims=True) / batch_size 
+        grad_weights = np.dot(grad_output, self.input.T) / self.args.batch_size  
+        grad_biases = np.sum(grad_output, axis=1, keepdims=True) / self.args.batch_size 
         grad_weights += self.args.weight_decay * self.weights
         grad_biases  += self.args.weight_decay * self.biases 
 

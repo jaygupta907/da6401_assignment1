@@ -2,14 +2,14 @@ import argparse
 
 def get_args():
     parser = argparse.ArgumentParser(description='Multilayer Feedforward Neural Network')
-    parser.add_argument('--epochs', type=int, default=100, help='Number of epochs')
+    parser.add_argument('--epochs', type=int, default=5, help='Number of epochs')
     parser.add_argument('--batch_size', type=int, default=64, help='Batch size')
-    parser.add_argument('--eval_freq', type=int, default=5, help='Evaluation frequency')
+    parser.add_argument('--eval_freq', type=int, default=1, help='Evaluation frequency')
     parser.add_argument('--learning_rate', type=float, default=3e-3, help='Learning rate') 
     parser.add_argument('--dataset', type=str, default='mnist', help='Dataset to use')
     parser.add_argument('--hidden_size', type=int, default=64, help='Number of neurons in hidden layer')
     parser.add_argument('--num_layers', type=int, default=4, help='Number of hidden layers')
-    parser.add_argument('--optimizer', type=str, default='adam', help='Optimizer to use')
+    parser.add_argument('--optimizer', type=str, default='sgd', help='Optimizer to use')
     parser.add_argument('--weight_init', type=str, default='xavier_normal', help='Weight initialization')
     parser.add_argument('--activation', type=str, default='relu', help='Activation function')
     parser.add_argument('--beta1', type=float, default=0.9, help='Beta1 for Adam optimizer')
@@ -20,4 +20,5 @@ def get_args():
     parser.add_argument('--wandb_project', type=str, default='Multilayer_FeedForward_Network', help='wandb project name')
     parser.add_argument('--wandb_entity', type=str, default='jay_gupta-indian-institute-of-technology-madras', help='wandb entity name')
     parser.add_argument('--beta', type=float, default=0.9, help='Beta for rmsprop optimizer')
+    parser.add_argument('--loss',type=str,default='cross_entropy',help='Loss Function to use')
     return parser.parse_args()

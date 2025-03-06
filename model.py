@@ -69,7 +69,7 @@ class Sequential:
             grad_output = self.layers[i].backward(grad_output)
 
 
-    def train(self,train_batches,test_batches,args):
+    def train(self,train_batches,test_batches,val_batches):
         '''
         Trains the model.
         
@@ -78,19 +78,26 @@ class Sequential:
             test_batches (list): List of test batches.
             args (argparse.ArgumentParser): Command line arguments.
         '''
-        for epoch in range(args.epochs):
+        for epoch in range(self.args.epochs):
             loss = 0
+            correct= 0
+            total=0
             for _,(X_batch, Y_batch) in enumerate(train_batches):
+                total += self.args.batch_size
                 Y_pred = self.forward(X_batch)
                 self.backward(X_batch,Y_batch)
                 loss += cross_entropy_loss(Y_pred,Y_batch)
-            if epoch % args.eval_freq == 0:
-                print("\n <=======================Evaulating=======================>")
-                evaluation_accuracy = self.evaluate(test_batches)
+                correct += np.sum(np.argmax(Y_pred,axis=1) == np.argmax(Y_batch,axis=1))
+            if epoch % self.args.eval_freq == 0:
+                evaluation_accuracy ,evaluation_loss= self.evaluate(val_batches)
                 wandb.log({"epoch": epoch,"evaluation_accuracy": evaluation_accuracy})
-                print("The evaluation accuracy at epoch {} is {} \n".format(epoch,evaluation_accuracy))
+                wandb.log({"epoch": epoch,"evaluation_loss": evaluation_loss})
+            loss = loss/len(train_batches)
+            accuracy = correct/total
             wandb.log({"epoch": epoch,"Training_Loss": loss})
-            print('The cross entropy loss at epoch {} is {}'.format(epoch,loss))
+            wandb.log({"epoch": epoch,"Training_Accuracy": accuracy})
+            print('The training cross entropy loss at epoch {} is {}'.format(epoch,loss))
+            print('The training accuracy at epoch {} is {}'.format(epoch,accuracy))
 
 
     def evaluate(self,batches):
@@ -102,10 +109,13 @@ class Sequential:
         '''
         correct = 0
         total = 0
+        loss = 0
         for _,(X_batch, Y_batch) in enumerate(batches):
             predictions = self.forward(X_batch)
+            loss += cross_entropy_loss(predictions,Y_batch)
             correct += np.sum(np.argmax(predictions,axis=1) == np.argmax(Y_batch,axis=1))
             total += self.args.batch_size
+        loss = loss/len(batches)
         accuracy = correct / total
-        return accuracy
+        return accuracy ,loss
         

@@ -1,0 +1,12 @@
+F:\Semester 8\Introduction to Deep Learning\Assignment_1\layer.py:18: RuntimeWarning: invalid value encountered in subtract
+  lambda x: np.exp(x - np.max(x, axis=0, keepdims=True)) / np.sum(np.exp(x - np.max(x, axis=0, keepdims=True)), axis=0, keepdims=True),
+The training cross entropy loss at epoch 0 is nan
+The training accuracy at epoch 0 is 0.09858190165876778
+The training cross entropy loss at epoch 1 is nan
+The training accuracy at epoch 1 is 0.0983597452606635
+The training cross entropy loss at epoch 2 is nan
+The training accuracy at epoch 2 is 0.0983597452606635
+The training cross entropy loss at epoch 3 is nan
+The training accuracy at epoch 3 is 0.0983597452606635
+The training cross entropy loss at epoch 4 is nan
+The training accuracy at epoch 4 is 0.0983597452606635

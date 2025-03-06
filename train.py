@@ -2,25 +2,20 @@ from dataset import Batch_Dataset
 from config import get_args
 from model import Sequential
 from layer import Perceptron_Layer
-import numpy as np
 import wandb
-from optimizers import SGD,Momentum,Nesterov,Adagrad,RMSProp,Adam,Nadam
 
 args = get_args()
 
 wandb.init(project=args.wandb_project,
             entity=args.wandb_entity,
-            config=args,name=f"{args.optimizer}")
+            config=args,name=f"opt_{args.optimizer}_lr_{args.learning_rate}_batch_{args.batch_size}_layer_{args.num_layers}_hidden_{args.hidden_size}_act_{args.activation}_decay_{args.weight_decay}_init_{args.weight_init}_epoch_{args.epochs}")
 
 data = Batch_Dataset(args.dataset)
-
-data.preprocess()
-train_batches = data.create_train_batches(batch_size=args.batch_size, shuffle=True)
-test_batches  = data.create_test_batches(batch_size=args.batch_size, shuffle=True)
-
+train_batches =  data.create_train_batches(batch_size=args.batch_size, shuffle=True)
+test_batches  =  data.create_test_batches(batch_size=args.batch_size, shuffle=True)
+val_batches   =  data.create_val_batches(batch_size=args.batch_size, shuffle=True)
 input_dim = train_batches[0][0].shape[1]
 num_classes = train_batches[0][1].shape[1]
-
 model = Sequential(args=args)
 model.add(Perceptron_Layer(input_dim,
                            args.hidden_size,
@@ -41,4 +36,4 @@ model.add(Perceptron_Layer(args.hidden_size,
 
 
 
-model.train(train_batches,test_batches,args)
+model.train(train_batches,test_batches,val_batches)

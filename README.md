@@ -13,6 +13,11 @@ conda activate Multilayer_FFNN
 
 To run the training script `train.py`, use the following command:
 
+
 ```bash
-python train.py 
+python train.py --wandb_entity name --wandb_project projectname
+```
+## Run wandb sweep
+```bash
+wandb sweep sweep.yaml
 ```

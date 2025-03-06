@@ -1,5 +1,4 @@
 import numpy as np
-import wandb
 
 def cross_entropy_loss(y_pred, y_true):
     """
@@ -19,3 +18,7 @@ def cross_entropy_derivative(y_pred, y_true):
     Computes the derivative of the cross-entropy loss. 
     """
     return (y_pred - y_true).T
+
+
+def mean_squared_loss(y_pred,y_true):
+    return np.sum((y_true-y_pred)**2)/y_true.shape[0]
