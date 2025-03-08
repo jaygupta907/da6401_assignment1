@@ -10,11 +10,12 @@ class Batch_Dataset:
     def __init__(self, dataset, validation_split=0.1):
         if dataset == 'mnist':
             (x_train, y_train), (self.x_test, self.y_test) = mnist.load_data()
+            self.classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         elif dataset == 'fashion_mnist':
             (x_train, y_train), (self.x_test, self.y_test) = fashion_mnist.load_data()
+            self.classes = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat","Sandal", "Shirt", "Sneaker", "Bag", "Ankle boot"]
         else:
             raise ValueError('Dataset not supported')
-        
         # Flatten images
         x_train = x_train.reshape(-1, x_train.shape[1] * x_train.shape[2])
         self.x_test = self.x_test.reshape(-1, self.x_test.shape[1] * self.x_test.shape[2])

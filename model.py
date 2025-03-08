@@ -2,6 +2,11 @@ from layer import ACTIVATIONS
 import numpy as np
 from loss import cross_entropy_derivative,cross_entropy_loss
 import wandb
+from sklearn.metrics import confusion_matrix
+import plotly.express as px
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.io as pio
 
 class Sequential:
     '''
@@ -89,7 +94,7 @@ class Sequential:
                 loss += cross_entropy_loss(Y_pred,Y_batch)
                 correct += np.sum(np.argmax(Y_pred,axis=1) == np.argmax(Y_batch,axis=1))
             if epoch % self.args.eval_freq == 0:
-                evaluation_accuracy ,evaluation_loss= self.evaluate(val_batches)
+                evaluation_accuracy ,evaluation_loss= self.evaluate(val_batches,'validation')
                 wandb.log({"epoch": epoch,"evaluation_accuracy": evaluation_accuracy})
                 wandb.log({"epoch": epoch,"evaluation_loss": evaluation_loss})
             loss = loss/len(train_batches)
@@ -100,7 +105,7 @@ class Sequential:
             print('The training accuracy at epoch {} is {}'.format(epoch,accuracy))
 
 
-    def evaluate(self,batches):
+    def evaluate(self,batches,batch_type,classes=None):
         '''
         Evaluates the model.
         
@@ -110,12 +115,49 @@ class Sequential:
         correct = 0
         total = 0
         loss = 0
+        y_true =[]
+        y_pred =[]
         for _,(X_batch, Y_batch) in enumerate(batches):
             predictions = self.forward(X_batch)
             loss += cross_entropy_loss(predictions,Y_batch)
             correct += np.sum(np.argmax(predictions,axis=1) == np.argmax(Y_batch,axis=1))
+            y_true.append(np.argmax(Y_batch,axis=1))
+            y_pred.append(np.argmax(predictions,axis=1))
             total += self.args.batch_size
+        y_true = np.concatenate(y_true)
+        y_pred = np.concatenate(y_pred)
         loss = loss/len(batches)
         accuracy = correct / total
+        if (batch_type=='test'):
+            cm = confusion_matrix(y_true, y_pred)
+
+            fig = go.Figure()
+            hovertext = [[f"True: {classes[i]}<br>Predicted: {classes[j]}<br>Count: {cm[i, j]}"
+              for j in range(len(classes))] for i in range(len(classes))]
+            fig.add_trace(go.Heatmap(
+                z=cm, 
+                x=classes, 
+                y=classes,
+                colorscale="Blues",  
+                text=cm,  
+                texttemplate="%{text}", 
+                hoverinfo="text",
+                hovertext = hovertext 
+            ))
+
+            # Update layout for better readability
+            fig.update_layout(
+                title="Confusion Matrix",
+                xaxis=dict(title="Predicted Label", tickangle=-45, tickfont=dict(size=12)),
+                yaxis=dict(title="True Label", tickfont=dict(size=12)),
+                font=dict(size=14),
+                width = 800,
+                height = 800
+            )
+            fig.show()
+            # Log the interactive Plotly figure to WandB
+            wandb.log({"Confusion Matrix": wandb.Html(pio.to_html(fig,full_html=False))})
+
+
         return accuracy ,loss
         
