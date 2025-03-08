@@ -12,7 +12,7 @@ parameters:
   batch_size:
     values: [32,64]
   optimizer:
-    values: ["sgd", "momentum","adagrad","rmsprop", "adam", "nadam"]
+    values: ["sgd", "nesterov","momentum","adagrad","rmsprop", "adam", "nadam"]
   num_layers:
     values: [3, 4,5]
   hidden_size:
@@ -22,5 +22,6 @@ parameters:
   weight_decay:
     values: [0, 0.0005]
   weight_init:
-    values: ["random","xavier_normal"]
+    values: ["xavier_normal","random"]
+run_cap: 200
   

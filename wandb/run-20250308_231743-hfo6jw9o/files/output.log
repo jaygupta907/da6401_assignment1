@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\train.py", line 44, in <module>
-    model.train(train_batches,test_batches,val_batches)
-  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 93, in train
-    self.backward(X_batch, Y_batch)  # Perform backward pass
-  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 74, in backward
-    grad_output = activation_grad(self.activations[i]) * grad_output  # Apply activation derivative
-ValueError: operands could not be broadcast together with shapes (10,64) (64,10)
