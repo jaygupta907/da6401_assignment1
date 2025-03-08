@@ -1,0 +1,10 @@
+The training cross entropy loss at epoch 0 is 0.5169222509904524
+The training accuracy at epoch 0 is 0.8145919727488151
+The training cross entropy loss at epoch 1 is 0.36688506295483725
+The training accuracy at epoch 1 is 0.8659471267772512
+The training cross entropy loss at epoch 2 is 0.33228666625861975
+The training accuracy at epoch 2 is 0.8776103376777251
+The training cross entropy loss at epoch 3 is 0.30806521982081353
+The training accuracy at epoch 3 is 0.8856449940758294
+The training cross entropy loss at epoch 4 is 0.2891932828998314
+The training accuracy at epoch 4 is 0.8921615817535545

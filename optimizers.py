@@ -32,7 +32,31 @@ class Nesterov:
         self.v_b = 0
 
     def update(self,weights,biases ,grad_weights, grad_biases):
-        pass
+        """
+        Updates the weights and biases using Nesterov Accelerated Gradient Descent.
+
+        Args:
+            weights (numpy.ndarray): Current weight matrix.
+            biases (numpy.ndarray): Current bias vector.
+            grad_weights (numpy.ndarray): Gradient of loss w.r.t weights.
+            grad_biases (numpy.ndarray): Gradient of loss w.r.t biases.
+
+        Returns:
+            tuple: Updated weights and biases.
+        """
+        # Save previous velocity
+        prev_v_w = self.v_w
+        prev_v_b = self.v_b
+
+
+        self.v_w = self.args.momentum * self.v_w - self.args.learning_rate * grad_weights
+        self.v_b = self.args.momentum * self.v_b - self.args.learning_rate * grad_biases
+
+
+        weights += -self.args.momentum * prev_v_w + (1 + self.args.momentum) * self.v_w
+        biases += -self.args.momentum * prev_v_b + (1 + self.args.momentum) * self.v_b
+
+        return weights, biases
 
 class Adagrad:
     def __init__(self, args):

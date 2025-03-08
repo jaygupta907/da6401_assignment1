@@ -1,0 +1,13 @@
+{"time":"2025-03-08T21:49:09.9204036+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"F:\\Semester 8\\Introduction to Deep Learning\\Assignment_1\\wandb\\run-20250308_214909-7iuqonpw\\logs\\debug-core.log"}
+{"time":"2025-03-08T21:49:11.3492311+05:30","level":"INFO","msg":"created new stream","id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:11.3492311+05:30","level":"INFO","msg":"stream: started","id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:11.3492311+05:30","level":"INFO","msg":"handler: started","stream_id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:11.3492311+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:11.3497604+05:30","level":"INFO","msg":"sender: started","stream_id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:11.7843418+05:30","level":"INFO","msg":"stream: closing","id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:11.7843418+05:30","level":"ERROR","msg":"sender: upsertConfig: RunRecord is nil"}
+{"time":"2025-03-08T21:49:12.7271331+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-08T21:49:12.7271331+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:12.7271331+05:30","level":"INFO","msg":"sender: closed","stream_id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:12.7271331+05:30","level":"INFO","msg":"handler: closed","stream_id":"7iuqonpw"}
+{"time":"2025-03-08T21:49:12.7385832+05:30","level":"INFO","msg":"stream: closed","id":"7iuqonpw"}

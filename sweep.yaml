@@ -2,7 +2,7 @@ name: Multilayer_FeedForward_Network_Sweep
 project: Multilayer_FeedForward_Network
 entity: jay_gupta-indian-institute-of-technology-madras
 program: train.py
-method: random  # or "grid" or "random"
+method: bayes
 metric:
   name: evaluation_accuracy
   goal: maximize
@@ -16,7 +16,7 @@ parameters:
   num_layers:
     values: [3, 4,5]
   hidden_size:
-    values: [32,64]
+    values: [32,64,128]
   activation:
     values: ["relu", "tanh", "sigmoid"]
   weight_decay:

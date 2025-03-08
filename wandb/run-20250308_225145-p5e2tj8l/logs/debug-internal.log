@@ -1,0 +1,15 @@
+{"time":"2025-03-08T22:51:45.5607817+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"F:\\Semester 8\\Introduction to Deep Learning\\Assignment_1\\wandb\\run-20250308_225145-p5e2tj8l\\logs\\debug-core.log"}
+{"time":"2025-03-08T22:51:46.9912604+05:30","level":"INFO","msg":"created new stream","id":"p5e2tj8l"}
+{"time":"2025-03-08T22:51:46.9912604+05:30","level":"INFO","msg":"stream: started","id":"p5e2tj8l"}
+{"time":"2025-03-08T22:51:46.9912604+05:30","level":"INFO","msg":"handler: started","stream_id":"p5e2tj8l"}
+{"time":"2025-03-08T22:51:46.9912604+05:30","level":"INFO","msg":"sender: started","stream_id":"p5e2tj8l"}
+{"time":"2025-03-08T22:51:46.9917823+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"p5e2tj8l"}
+{"time":"2025-03-08T22:51:47.6781297+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-08T22:51:56.74584+05:30","level":"INFO","msg":"stream: closing","id":"p5e2tj8l"}
+{"time":"2025-03-08T22:51:56.74584+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-08T22:51:56.7470486+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-08T22:52:00.4853321+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-08T22:52:01.5070997+05:30","level":"INFO","msg":"handler: closed","stream_id":"p5e2tj8l"}
+{"time":"2025-03-08T22:52:01.5070997+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"p5e2tj8l"}
+{"time":"2025-03-08T22:52:01.5070997+05:30","level":"INFO","msg":"sender: closed","stream_id":"p5e2tj8l"}
+{"time":"2025-03-08T22:52:01.5185579+05:30","level":"INFO","msg":"stream: closed","id":"p5e2tj8l"}

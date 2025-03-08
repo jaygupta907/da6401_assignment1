@@ -1,0 +1,38 @@
+The training cross entropy loss at epoch 0 is 0.7703342202415161
+The training accuracy at epoch 0 is 0.7134737855450237
+The training cross entropy loss at epoch 1 is 0.7299542857647698
+The training accuracy at epoch 1 is 0.7445201421800948
+The training cross entropy loss at epoch 2 is 0.7932730686048349
+The training accuracy at epoch 2 is 0.7079754146919431
+The training cross entropy loss at epoch 3 is 0.7040278367292186
+The training accuracy at epoch 3 is 0.744168394549763
+The training cross entropy loss at epoch 4 is 0.8981214635944963
+The training accuracy at epoch 4 is 0.6682464454976303
+The training cross entropy loss at epoch 5 is 0.8404608741520324
+The training accuracy at epoch 5 is 0.685833827014218
+The training cross entropy loss at epoch 6 is 0.7694784557020573
+The training accuracy at epoch 6 is 0.7090491706161137
+The training cross entropy loss at epoch 7 is 0.680330835530972
+The training accuracy at epoch 7 is 0.7557760663507109
+The training cross entropy loss at epoch 8 is 0.7407685160589179
+The training accuracy at epoch 8 is 0.7338751481042654
+The training cross entropy loss at epoch 9 is 1.1375986624342205
+The training accuracy at epoch 9 is 0.5341935722748815
+The training cross entropy loss at epoch 10 is 1.0430728062126418
+The training accuracy at epoch 10 is 0.5569646030805687
+The training cross entropy loss at epoch 11 is 1.090893580997536
+The training accuracy at epoch 11 is 0.5646104857819905
+Traceback (most recent call last):
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\train.py", line 44, in <module>
+    model.train(train_batches,test_batches,val_batches)
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 93, in train
+    self.backward(X_batch, Y_batch)  # Perform backward pass
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\model.py", line 75, in backward
+    grad_output = self.layers[i].backward(grad_output)  # Backpropagate through layer
+  File "F:\Semester 8\Introduction to Deep Learning\Assignment_1\layer.py", line 91, in backward
+    grad_biases = np.sum(grad_output, axis=1, keepdims=True) / self.args.batch_size
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\numpy\_core\fromnumeric.py", line 2389, in sum
+    return _wrapreduction(
+  File "C:\Users\jaygu\anaconda3\envs\Multilayer_FFNN\lib\site-packages\numpy\_core\fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+KeyboardInterrupt

@@ -1,0 +1,147 @@
+2025-03-08 22:30:49,745 INFO    StreamThr :32236 [internal.py:wandb_internal():83] W&B internal server running at pid: 32236, started at: 2025-03-08 22:30:49.744017
+2025-03-08 22:30:49,747 INFO    WriterThread:32236 [datastore.py:open_for_write():87] open: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\run-im250a1x.wandb
+2025-03-08 22:30:50,437 INFO    SenderThread:32236 [dir_watcher.py:__init__():211] watching files in: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files
+2025-03-08 22:30:50,437 INFO    SenderThread:32236 [sender.py:_start_run_threads():1133] run started: im250a1x with start time 1741453249.742737
+2025-03-08 22:30:51,794 INFO    HandlerThread:32236 [system_monitor.py:start():187] Starting system monitor
+2025-03-08 22:30:51,794 INFO    SystemMonitor:32236 [system_monitor.py:_start():151] Starting system asset monitoring threads
+2025-03-08 22:30:51,794 INFO    HandlerThread:32236 [system_monitor.py:probe():207] Collecting system info
+2025-03-08 22:30:51,803 INFO    SystemMonitor:32236 [interfaces.py:start():186] Started cpu monitoring
+2025-03-08 22:30:51,804 INFO    SystemMonitor:32236 [interfaces.py:start():186] Started disk monitoring
+2025-03-08 22:30:51,805 INFO    SystemMonitor:32236 [interfaces.py:start():186] Started gpu monitoring
+2025-03-08 22:30:51,817 INFO    SystemMonitor:32236 [interfaces.py:start():186] Started memory monitoring
+2025-03-08 22:30:51,852 INFO    SystemMonitor:32236 [interfaces.py:start():186] Started network monitoring
+2025-03-08 22:30:51,949 INFO    HandlerThread:32236 [system_monitor.py:probe():217] Finished collecting system info
+2025-03-08 22:30:51,949 INFO    HandlerThread:32236 [system_monitor.py:probe():220] Publishing system info
+2025-03-08 22:30:52,453 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_created():271] file/dir created: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\conda-environment.yaml
+2025-03-08 22:31:04,077 INFO    HandlerThread:32236 [system_monitor.py:probe():222] Finished publishing system info
+2025-03-08 22:31:04,095 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-metadata.json with policy now
+2025-03-08 22:31:04,582 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\conda-environment.yaml
+2025-03-08 22:31:04,582 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_created():271] file/dir created: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\requirements.txt
+2025-03-08 22:31:04,582 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_created():271] file/dir created: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-metadata.json
+2025-03-08 22:31:05,136 INFO    wandb-upload_0:32236 [upload_job.py:push():130] Uploaded file C:\Users\jaygu\AppData\Local\Temp\tmpeuubmq81wandb\or6xmxut-wandb-metadata.json
+2025-03-08 22:31:11,627 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:11,630 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:11,633 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:11,634 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:11,668 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_created():271] file/dir created: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log
+2025-03-08 22:31:11,669 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_created():271] file/dir created: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json
+2025-03-08 22:31:13,691 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log
+2025-03-08 22:31:15,723 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:15,725 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json
+2025-03-08 22:31:15,728 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:15,732 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:15,737 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:16,738 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json
+2025-03-08 22:31:17,742 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log
+2025-03-08 22:31:19,832 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:19,835 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:19,837 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:19,839 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:20,767 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json
+2025-03-08 22:31:21,781 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log
+2025-03-08 22:31:22,796 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\config.yaml
+2025-03-08 22:31:24,232 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:24,235 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:24,237 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:24,240 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:24,810 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json
+2025-03-08 22:31:25,813 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log
+2025-03-08 22:31:28,701 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:28,704 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:28,708 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:28,711 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:28,839 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json
+2025-03-08 22:31:29,870 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log
+2025-03-08 22:31:29,871 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_created():271] file/dir created: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\media\html\Confusion Matrix_20_e07b448e06dd2018f826.html
+2025-03-08 22:31:29,958 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_created():271] file/dir created: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\media\html
+2025-03-08 22:31:29,958 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_created():271] file/dir created: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\media
+2025-03-08 22:31:29,975 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file media\html\Confusion Matrix_20_e07b448e06dd2018f826.html with policy now
+2025-03-08 22:31:29,979 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:29,979 INFO    SenderThread:32236 [sender.py:send_exit():553] handling exit code: 0
+2025-03-08 22:31:29,979 INFO    SenderThread:32236 [sender.py:send_exit():555] handling runtime: 39
+2025-03-08 22:31:29,981 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:29,981 INFO    SenderThread:32236 [sender.py:send_exit():561] send defer
+2025-03-08 22:31:29,981 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 0
+2025-03-08 22:31:29,982 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 0
+2025-03-08 22:31:29,982 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 1
+2025-03-08 22:31:29,982 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 1
+2025-03-08 22:31:29,982 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 1
+2025-03-08 22:31:29,982 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 2
+2025-03-08 22:31:29,982 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 2
+2025-03-08 22:31:29,982 INFO    HandlerThread:32236 [system_monitor.py:finish():196] Stopping system monitor
+2025-03-08 22:31:29,982 INFO    HandlerThread:32236 [interfaces.py:finish():198] Joined cpu monitor
+2025-03-08 22:31:29,994 INFO    HandlerThread:32236 [interfaces.py:finish():198] Joined disk monitor
+2025-03-08 22:31:30,602 INFO    HandlerThread:32236 [interfaces.py:finish():198] Joined gpu monitor
+2025-03-08 22:31:30,602 INFO    HandlerThread:32236 [interfaces.py:finish():198] Joined memory monitor
+2025-03-08 22:31:30,602 INFO    HandlerThread:32236 [interfaces.py:finish():198] Joined network monitor
+2025-03-08 22:31:30,603 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 2
+2025-03-08 22:31:30,603 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 3
+2025-03-08 22:31:30,604 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 3
+2025-03-08 22:31:30,605 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 3
+2025-03-08 22:31:30,605 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 4
+2025-03-08 22:31:30,606 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 4
+2025-03-08 22:31:30,606 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 4
+2025-03-08 22:31:30,606 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 5
+2025-03-08 22:31:30,606 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 5
+2025-03-08 22:31:30,618 INFO    SenderThread:32236 [sender.py:_save_file():1402] saving file wandb-summary.json with policy end
+2025-03-08 22:31:30,619 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 5
+2025-03-08 22:31:30,619 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 6
+2025-03-08 22:31:30,619 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 6
+2025-03-08 22:31:30,620 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 6
+2025-03-08 22:31:30,620 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 7
+2025-03-08 22:31:30,620 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 7
+2025-03-08 22:31:30,621 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 7
+2025-03-08 22:31:30,884 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\media\html\Confusion Matrix_20_e07b448e06dd2018f826.html
+2025-03-08 22:31:30,895 INFO    Thread-16 :32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json
+2025-03-08 22:31:31,768 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 8
+2025-03-08 22:31:31,768 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 8
+2025-03-08 22:31:31,769 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 8
+2025-03-08 22:31:31,769 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 9
+2025-03-08 22:31:31,769 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 9
+2025-03-08 22:31:31,769 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 9
+2025-03-08 22:31:31,769 INFO    SenderThread:32236 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-03-08 22:31:31,896 INFO    SenderThread:32236 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log
+2025-03-08 22:31:31,897 INFO    SenderThread:32236 [dir_watcher.py:finish():388] scan: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files
+2025-03-08 22:31:31,897 INFO    SenderThread:32236 [dir_watcher.py:finish():402] scan save: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\conda-environment.yaml conda-environment.yaml
+2025-03-08 22:31:31,897 INFO    SenderThread:32236 [dir_watcher.py:finish():402] scan save: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\config.yaml config.yaml
+2025-03-08 22:31:31,900 INFO    SenderThread:32236 [dir_watcher.py:finish():402] scan save: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log output.log
+2025-03-08 22:31:31,902 INFO    SenderThread:32236 [dir_watcher.py:finish():402] scan save: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\requirements.txt requirements.txt
+2025-03-08 22:31:31,904 INFO    SenderThread:32236 [dir_watcher.py:finish():402] scan save: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-metadata.json wandb-metadata.json
+2025-03-08 22:31:31,904 INFO    SenderThread:32236 [dir_watcher.py:finish():402] scan save: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json wandb-summary.json
+2025-03-08 22:31:31,908 INFO    SenderThread:32236 [dir_watcher.py:finish():402] scan save: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\media\html\Confusion Matrix_20_e07b448e06dd2018f826.html media/html/Confusion Matrix_20_e07b448e06dd2018f826.html
+2025-03-08 22:31:31,909 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 10
+2025-03-08 22:31:31,909 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 10
+2025-03-08 22:31:31,909 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 10
+2025-03-08 22:31:31,909 INFO    SenderThread:32236 [file_pusher.py:finish():169] shutting down file pusher
+2025-03-08 22:31:32,657 INFO    wandb-upload_1:32236 [upload_job.py:push():130] Uploaded file F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\conda-environment.yaml
+2025-03-08 22:31:32,699 INFO    wandb-upload_4:32236 [upload_job.py:push():130] Uploaded file F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\requirements.txt
+2025-03-08 22:31:32,699 INFO    wandb-upload_3:32236 [upload_job.py:push():130] Uploaded file F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\output.log
+2025-03-08 22:31:32,704 INFO    wandb-upload_5:32236 [upload_job.py:push():130] Uploaded file F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\wandb-summary.json
+2025-03-08 22:31:33,079 INFO    wandb-upload_2:32236 [upload_job.py:push():130] Uploaded file F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\files\config.yaml
+2025-03-08 22:31:34,291 INFO    wandb-upload_0:32236 [upload_job.py:push():130] Uploaded file C:\Users\jaygu\AppData\Local\Temp\tmpeuubmq81wandb\utxkq0qw-media/html/Confusion Matrix_20_e07b448e06dd2018f826.html
+2025-03-08 22:31:37,881 INFO    wandb-upload_1:32236 [upload_job.py:push():130] Uploaded file C:\Users\jaygu\AppData\Local\Temp\tmpeuubmq81wandb\vq17w39o-media/html/Confusion Matrix_20_e07b448e06dd2018f826.html
+2025-03-08 22:31:41,354 INFO    wandb-upload_3:32236 [upload_job.py:push():130] Uploaded file C:\Users\jaygu\AppData\Local\Temp\tmpeuubmq81wandb\pubavxw4-media/html/Confusion Matrix_20_e07b448e06dd2018f826.html
+2025-03-08 22:31:41,556 INFO    Thread-15 (_thread_body):32236 [sender.py:transition_state():581] send defer: 11
+2025-03-08 22:31:41,556 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 11
+2025-03-08 22:31:41,557 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 11
+2025-03-08 22:31:41,557 INFO    SenderThread:32236 [file_pusher.py:join():175] waiting for file pusher
+2025-03-08 22:31:41,560 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 12
+2025-03-08 22:31:41,560 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 12
+2025-03-08 22:31:41,560 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 12
+2025-03-08 22:31:41,561 INFO    SenderThread:32236 [file_stream.py:finish():601] file stream finish called
+2025-03-08 22:31:41,882 INFO    SenderThread:32236 [file_stream.py:finish():605] file stream finish is done
+2025-03-08 22:31:41,883 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 13
+2025-03-08 22:31:41,883 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 13
+2025-03-08 22:31:41,883 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 13
+2025-03-08 22:31:41,883 INFO    SenderThread:32236 [sender.py:transition_state():581] send defer: 14
+2025-03-08 22:31:41,884 INFO    HandlerThread:32236 [handler.py:handle_request_defer():188] handle defer: 14
+2025-03-08 22:31:41,884 INFO    SenderThread:32236 [sender.py:send_request_defer():577] handle sender defer: 14
+2025-03-08 22:31:41,887 INFO    MainThread:32236 [wandb_run.py:_footer_history_summary_info():3958] rendering history
+2025-03-08 22:31:41,888 INFO    MainThread:32236 [wandb_run.py:_footer_history_summary_info():3990] rendering summary
+2025-03-08 22:31:41,889 INFO    MainThread:32236 [wandb_run.py:_footer_sync_info():3919] logging synced files
+2025-03-08 22:31:41,891 INFO    HandlerThread:32236 [handler.py:finish():897] shutting down handler
+2025-03-08 22:31:42,896 INFO    WriterThread:32236 [datastore.py:close():296] close: F:\Semester 8\Introduction to Deep Learning\Assignment_1\wandb\run-20250308_223049-im250a1x\run-im250a1x.wandb
+2025-03-08 22:31:42,896 INFO    SenderThread:32236 [sender.py:finish():1580] shutting down sender
+2025-03-08 22:31:42,896 INFO    MsgRouterThr:32236 [mailbox.py:close():115] Closing mailbox, abandoning 0 handles.
+2025-03-08 22:31:42,897 INFO    SenderThread:32236 [file_pusher.py:finish():169] shutting down file pusher
+2025-03-08 22:31:42,897 INFO    SenderThread:32236 [file_pusher.py:join():175] waiting for file pusher
