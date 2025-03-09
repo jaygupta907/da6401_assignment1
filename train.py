@@ -3,13 +3,25 @@ from config import get_args
 from model import Sequential
 from layer import Perceptron_Layer
 import wandb
-
+import numpy as np
 args = get_args()
 
 wandb.init(project=args.wandb_project,
             entity=args.wandb_entity,
             config=args,
             name=f"opt_{args.optimizer}_lr_{args.learning_rate}_batch_{args.batch_size}_layer_{args.num_layers}_hidden_{args.hidden_size}_act_{args.activation}_decay_{args.weight_decay}_init_{args.weight_init}_epoch_{args.epochs}")
+
+
+# wandb.init(project=args.wandb_project,
+#             entity=args.wandb_entity,
+#             config=args,
+#             name=f"Best_Hyperparameters_mse")
+
+# wandb.init(project=args.wandb_project,
+#             entity=args.wandb_entity,
+#             config=args,
+#             name=f"Best_Hyperparameters_cross_entropy")
+
 
 data = Batch_Dataset(args.dataset)
 train_batches =  data.create_train_batches(batch_size=args.batch_size, shuffle=True)
@@ -38,8 +50,5 @@ model.add(Perceptron_Layer(args.hidden_size,
                            args,
                            weight_init=args.weight_init),
                            activation='softmax')
-
-
-
 model.train(train_batches,test_batches,val_batches)
-model.evaluate(test_batches,'test',classes)
+# model.evaluate(test_batches,'test',classes)

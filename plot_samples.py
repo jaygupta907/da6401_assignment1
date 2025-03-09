@@ -15,17 +15,14 @@ wandb.init(project=args.wandb_project,
 
 samples = {label: None for label in range(10)}
 
-# Iterate through dataset to find one sample for each class
+
 for i in range(len(data.x_train)):
     label = np.argmax(data.y_train[i])
     img = data.x_train[i]
     if samples[label] is None:
         samples[label] = img
-    if all(v is not None for v in samples.values()):  # Stop when all classes are found
+    if all(v is not None for v in samples.values()):  
         break
-
-
-
 
 
 subplot_titles = [data.classes[label] for (label,_) in samples.items()]
@@ -36,7 +33,7 @@ for i, (label,img) in enumerate(samples.items()):
     col = i % 5 + 1
     fig.add_trace(go.Heatmap(z=np.flip(np.reshape(img,(28,28)),axis=0), colorscale='gray', showscale=False),col=col,row=row)
 
-# Update layout: adjust overall figure size and hide axes.
+
 fig.update_layout(
     height=600,
     width=1000,
@@ -45,6 +42,7 @@ fig.update_layout(
     margin=dict(l=10, r=10, t=50, b=50)
 )
 
+fig.show()
 wandb.log({"Samples": wandb.Html(pio.to_html(fig,full_html=False))})
 
 wandb.finish()
