@@ -23,6 +23,12 @@ wandb.init(project=args.wandb_project,
 #             name=f"Best_Hyperparameters_cross_entropy")
 
 
+# wandb.init(project=args.wandb_project,
+#             entity=args.wandb_entity,
+#             config=args,
+#             name=f"fashion_mnist_recommendations")
+
+
 data = Batch_Dataset(args.dataset)
 train_batches =  data.create_train_batches(batch_size=args.batch_size, shuffle=True)
 test_batches  =  data.create_test_batches(batch_size=args.batch_size, shuffle=True)
