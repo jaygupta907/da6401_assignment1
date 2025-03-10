@@ -5,7 +5,7 @@
 - Create an environment and install dependencies:
 ```bash
 conda env create -f environment.yaml
-conda activate Multilayer_FFNN # Replace 'my_env' with your actual environment name
+conda activate Multilayer_FFNN 
 ```
 
 ## Plot samples
