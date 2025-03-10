@@ -57,4 +57,4 @@ model.add(Perceptron_Layer(args.hidden_size,
                            weight_init=args.weight_init),
                            activation='softmax')
 model.train(train_batches,test_batches,val_batches)
-# model.evaluate(test_batches,'test',classes)
+model.evaluate(test_batches,'test',classes)

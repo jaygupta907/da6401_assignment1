@@ -1,4 +1,4 @@
-import numpy as np  # Import NumPy for numerical operations
+import numpy as np  
 
 
 
@@ -35,7 +35,7 @@ def cross_entropy_loss(y_pred, y_true):
     Returns:
         float: Loss value.
     """
-    return -np.sum(y_true * np.log(y_pred + 1e-9)) / y_true.shape[0]  # Adding small value (1e-9) to avoid log(0)
+    return -np.sum(y_true * np.log(y_pred + 1e-9)) / y_true.shape[0]  
 
 def cross_entropy_derivative(y_pred, y_true):
     """
@@ -48,7 +48,7 @@ def cross_entropy_derivative(y_pred, y_true):
     Returns:
         numpy.ndarray: Gradient of the loss w.r.t. output.
     """
-    return -y_true / (y_pred + 1e-9)  # Avoid division by zero
+    return -y_true / (y_pred + 1e-9) 
 
 def mean_squared_loss(y_pred, y_true):
     """

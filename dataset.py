@@ -1,5 +1,5 @@
-from keras._tf_keras.keras.datasets import mnist, fashion_mnist  # Import datasets
-import numpy as np  # Import NumPy for numerical operations
+from keras._tf_keras.keras.datasets import mnist, fashion_mnist 
+import numpy as np  
 
 
 class Batch_Dataset:

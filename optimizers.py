@@ -6,6 +6,18 @@ class SGD:
         self.args = args
 
     def update(self, weights,biases,grad_weights, grad_biases):
+        """
+        Updates the weights and biases 
+
+        Args:
+            weights (numpy.ndarray): Current weight matrix.
+            biases (numpy.ndarray): Current bias vector.
+            grad_weights (numpy.ndarray): Gradient of loss w.r.t weights.
+            grad_biases (numpy.ndarray): Gradient of loss w.r.t biases.
+
+        Returns:
+            tuple: Updated weights and biases.
+        """
         weights -= self.args.learning_rate * grad_weights
         biases  -= self.args.learning_rate * grad_biases
 
@@ -18,6 +30,18 @@ class Momentum:
         self.v_b = 0
 
     def update(self, weights,biases,grad_weights, grad_biases):
+        """
+        Updates the weights and biases 
+
+        Args:
+            weights (numpy.ndarray): Current weight matrix.
+            biases (numpy.ndarray): Current bias vector.
+            grad_weights (numpy.ndarray): Gradient of loss w.r.t weights.
+            grad_biases (numpy.ndarray): Gradient of loss w.r.t biases.
+
+        Returns:
+            tuple: Updated weights and biases.
+        """
         self.v_w = self.args.momentum * self.v_w + grad_weights
         self.v_b = self.args.momentum * self.v_b + grad_biases
         weights -= self.args.learning_rate * self.v_w
@@ -33,7 +57,7 @@ class Nesterov:
 
     def update(self,weights,biases ,grad_weights, grad_biases):
         """
-        Updates the weights and biases using Nesterov Accelerated Gradient Descent.
+        Updates the weights and biases 
 
         Args:
             weights (numpy.ndarray): Current weight matrix.
@@ -44,7 +68,6 @@ class Nesterov:
         Returns:
             tuple: Updated weights and biases.
         """
-        # Save previous velocity
         prev_v_w = self.v_w
         prev_v_b = self.v_b
 
@@ -65,6 +88,18 @@ class Adagrad:
         self.v_b = 0
 
     def update(self,weights,biases, grad_weights, grad_biases):
+        """
+        Updates the weights and biases 
+
+        Args:
+            weights (numpy.ndarray): Current weight matrix.
+            biases (numpy.ndarray): Current bias vector.
+            grad_weights (numpy.ndarray): Gradient of loss w.r.t weights.
+            grad_biases (numpy.ndarray): Gradient of loss w.r.t biases.
+
+        Returns:
+            tuple: Updated weights and biases.
+        """
         self.v_w += grad_weights**2
         self.v_b += grad_biases**2
         weights -= self.args.learning_rate * grad_weights / (np.sqrt(self.v_w) + self.args.epsilon)
@@ -78,6 +113,18 @@ class RMSProp:
         self.v_w = 0
         self.v_b = 0
     def update(self,weights,biases, grad_weights, grad_biases):
+        """
+        Updates the weights and biases 
+
+        Args:
+            weights (numpy.ndarray): Current weight matrix.
+            biases (numpy.ndarray): Current bias vector.
+            grad_weights (numpy.ndarray): Gradient of loss w.r.t weights.
+            grad_biases (numpy.ndarray): Gradient of loss w.r.t biases.
+
+        Returns:
+            tuple: Updated weights and biases.
+        """
         self.v_w = self.args.beta * self.v_w + (1 - self.args.beta) * grad_weights**2   
         self.v_b = self.args.beta * self.v_b + (1 - self.args.beta) * grad_biases**2
         weights -= self.args.learning_rate * grad_weights / (np.sqrt(self.v_w) + self.args.epsilon)
@@ -95,7 +142,18 @@ class Adam:
         self.timestep = 0
     
     def update(self,weights,biases, grad_weights, grad_biases):
+        """
+        Updates the weights and biases 
 
+        Args:
+            weights (numpy.ndarray): Current weight matrix.
+            biases (numpy.ndarray): Current bias vector.
+            grad_weights (numpy.ndarray): Gradient of loss w.r.t weights.
+            grad_biases (numpy.ndarray): Gradient of loss w.r.t biases.
+
+        Returns:
+            tuple: Updated weights and biases.
+        """
         self.timestep += 1
         self.m_w = self.args.beta1 * self.m_w + (1 - self.args.beta1) * grad_weights
         self.m_b = self.args.beta1 * self.m_b + (1 - self.args.beta1) * grad_biases
@@ -120,6 +178,18 @@ class Nadam:
         self.timestep = 0
 
     def update(self,weights,biases, grad_weights, grad_biases):
+        """
+        Updates the weights and biases 
+
+        Args:
+            weights (numpy.ndarray): Current weight matrix.
+            biases (numpy.ndarray): Current bias vector.
+            grad_weights (numpy.ndarray): Gradient of loss w.r.t weights.
+            grad_biases (numpy.ndarray): Gradient of loss w.r.t biases.
+
+        Returns:
+            tuple: Updated weights and biases.
+        """
         self.timestep += 1
         self.m_w = self.args.beta1 * self.m_w + (1 - self.args.beta1) * grad_weights
         self.m_b = self.args.beta1 * self.m_b + (1 - self.args.beta1) * grad_biases
