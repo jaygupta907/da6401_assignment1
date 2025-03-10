@@ -31,7 +31,7 @@ wandb agent <sweep-ID>
 ```bash
 ASSIGNMENT_1
 │── wandb                  # Directory for Weights & Biases logs
-│── .gitignore              # Git ignore file
+│── .gitignore              # Git ignore file (ignore folder storing wandb logs)
 │── config.py               # Configuration settings
 │── dataset.py              # Dataset loading and processing
 │── environment.yaml        # Conda environment setup
