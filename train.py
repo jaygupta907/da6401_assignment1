@@ -6,6 +6,7 @@ import wandb
 import numpy as np
 args = get_args()
 
+
 wandb.init(project=args.wandb_project,
             entity=args.wandb_entity,
             config=args,

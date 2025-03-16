@@ -40,7 +40,7 @@ class Perceptron_Layer:
 
         # Initialize weights based on the chosen method
         if weight_init == 'random':
-            self.weights = np.random.normal(0,1,size=(output_dim,input_dim))
+            self.weights = np.random.normal(0,0.25,size=(output_dim,input_dim))
         elif weight_init == 'xavier_uniform':
             limit = np.sqrt(6 / (input_dim + output_dim))
             self.weights = np.random.uniform(-limit, limit, size=(output_dim, input_dim))
